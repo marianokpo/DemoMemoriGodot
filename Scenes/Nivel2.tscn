@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/Nivel0.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Carta.tscn" type="PackedScene" id=2]
+
+[node name="Nivel2" instance=ExtResource( 1 )]
+Pos = [ "Posiciones/Pos01", "Posiciones/Pos02", "Posiciones/Pos03", "Posiciones/Pos04", "Posiciones/Pos05", "Posiciones/Pos06" ]
+Cartas = [ "Cartas/Carta01", "Cartas/Carta02", "Cartas/Carta03", "Cartas/Carta04", "Cartas/Carta05", "Cartas/Carta06" ]
+MaxPuntaje = 3
+
+[node name="Carta01" parent="Cartas" index="0" instance=ExtResource( 2 )]
+Nombre = "001"
+
+[node name="Carta02" parent="Cartas" index="1" instance=ExtResource( 2 )]
+Nombre = "001"
+
+[node name="Carta03" parent="Cartas" index="2" instance=ExtResource( 2 )]
+Nombre = "002"
+
+[node name="Carta04" parent="Cartas" index="3" instance=ExtResource( 2 )]
+Nombre = "002"
+
+[node name="Carta05" parent="Cartas" index="4" instance=ExtResource( 2 )]
+Nombre = "003"
+
+[node name="Carta06" parent="Cartas" index="5" instance=ExtResource( 2 )]
+Nombre = "003"
+
+[node name="Pos01" type="Position2D" parent="Posiciones" index="0"]
+position = Vector2( 300, 300 )
+
+[node name="Pos02" type="Position2D" parent="Posiciones" index="1"]
+position = Vector2( 600, 300 )
+
+[node name="Pos03" type="Position2D" parent="Posiciones" index="2"]
+position = Vector2( 900, 300 )
+
+[node name="Pos04" type="Position2D" parent="Posiciones" index="3"]
+position = Vector2( 300, 450 )
+
+[node name="Pos05" type="Position2D" parent="Posiciones" index="4"]
+position = Vector2( 600, 450 )
+
+[node name="Pos06" type="Position2D" parent="Posiciones" index="5"]
+position = Vector2( 900, 450 )

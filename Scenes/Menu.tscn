@@ -1,0 +1,70 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/Background/back.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Font/GAME_glm.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Scenes/Menu.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 80
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 40
+font_data = ExtResource( 2 )
+
+[node name="Menu" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 1280, 720 )
+texture = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Titulo" type="Label" parent="."]
+margin_left = 251.753
+margin_top = 116.602
+margin_right = 999.753
+margin_bottom = 196.602
+custom_fonts/font = SubResource( 1 )
+text = "Juego de Memoria"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="."]
+margin_left = 578.768
+margin_top = 381.605
+margin_right = 712.768
+margin_bottom = 533.605
+custom_constants/vseparation = 60
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Jugar" type="Button" parent="GridContainer"]
+margin_right = 134.0
+margin_bottom = 46.0
+custom_fonts/font = SubResource( 2 )
+text = "Jugar"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Salir" type="Button" parent="GridContainer"]
+margin_top = 106.0
+margin_right = 134.0
+margin_bottom = 152.0
+custom_fonts/font = SubResource( 2 )
+text = "Salir"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="GridContainer/Jugar" to="." method="_on_Jugar_pressed"]
+[connection signal="pressed" from="GridContainer/Salir" to="." method="_on_Salir_pressed"]

@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scenes/Nivel0.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Song/win.wav" type="AudioStream" id=2]
+[ext_resource path="res://Assets/Background/back.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Song/lose.wav" type="AudioStream" id=4]
+[ext_resource path="res://Assets/Music/Harp.ogg" type="AudioStream" id=6]
+
+[node name="Nivel0" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Fondo" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 1280, 720 )
+mouse_filter = 2
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Cartas" type="Node2D" parent="."]
+
+[node name="Posiciones" type="Node2D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 6 )
+autoplay = true
+
+[node name="EfectNo" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )
+
+[node name="EfectSi" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 2 )
+
+[node name="Inicio" type="Timer" parent="."]
+wait_time = 3.0
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_AudioStreamPlayer2D_finished"]
+[connection signal="timeout" from="Inicio" to="." method="_on_Inicio_timeout"]

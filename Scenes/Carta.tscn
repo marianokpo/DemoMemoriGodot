@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/Card/Dorso.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Carta.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 29.7885, 45.1977 )
+
+[node name="Carta" type="Area2D"]
+script = ExtResource( 2 )
+
+[node name="Texture" type="TextureRect" parent="."]
+rect_min_size = Vector2( 60, 90 )
+mouse_filter = 2
+texture = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 30.31, 45.2947 )
+shape = SubResource( 1 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+[connection signal="mouse_entered" from="." to="." method="_on_Carta_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_Carta_mouse_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
